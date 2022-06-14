@@ -117,7 +117,3 @@ function shuffleUp() {
 
 
 setInterval(shuffleUp, 5000)
-
-
-
-console.log(generateRandomNumber(5))
