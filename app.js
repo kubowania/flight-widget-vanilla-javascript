@@ -89,15 +89,15 @@ function generateRandomNumber(maxNumber) {
 
 function generateTime() {
   let displayHour = hour
-  if (hour < 24) {
-    hour++
-  }
   if (hour >= 24) {
-    hour = 1
+    hour = 0
     displayHour = hour
   }
   if (hour < 10) {
     displayHour = "0" + hour
+  }
+  if (hour < 24) {
+    hour++
   }
   return displayHour +  ":" + generateRandomNumber(5) + generateRandomNumber()
 }
