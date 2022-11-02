@@ -78,13 +78,7 @@ function generateRandomLetter() {
 }
 
 function generateRandomNumber(maxNumber) {
-  const numbers = "0123456789"
-  if (maxNumber) {
-    const newNumbers = numbers.slice(0, maxNumber)
-    return newNumbers.charAt(Math.floor(Math.random() * newNumbers.length))
-  } else {
-    return numbers.charAt(Math.floor(Math.random() * numbers.length))
-  }
+  return Math.floor(Math.random() * (maxNumber + 1))
 }
 
 function generateTime() {
@@ -99,7 +93,7 @@ function generateTime() {
   if (hour < 10) {
     displayHour = "0" + hour
   }
-  return displayHour +  ":" + generateRandomNumber(5) + generateRandomNumber()
+  return displayHour +  ":" + generateRandomNumber(5) + generateRandomNumber(9)
 }
 
 function shuffleUp() {
@@ -107,8 +101,8 @@ function shuffleUp() {
   flights.push({
     time: generateTime(),
     destination: destinations[Math.floor(Math.random() * destinations.length)],
-    flight: generateRandomLetter() + generateRandomLetter() + " " + generateRandomNumber() + generateRandomNumber() + generateRandomNumber(),
-    gate: generateRandomLetter() + " " + generateRandomLetter() + generateRandomLetter(),
+    flight: generateRandomLetter() + generateRandomLetter() + " " + generateRandomNumber(9) + generateRandomNumber(9) + generateRandomNumber(9),
+    gate: generateRandomLetter() + " " + generateRandomNumber(9) + generateRandomNumber(9),
     remarks: remarks[Math.floor(Math.random() * remarks.length)]
   })
   tableBody.textContent = ""
